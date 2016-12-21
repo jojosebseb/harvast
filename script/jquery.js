@@ -81,3 +81,15 @@ navHandle.on('click', function(){
   })
 })
 //nav
+
+$('.custom-drop-down').select2({
+  theme: "customjo"
+});
+
+$(function(){
+  $('.custom-calendar').datepicker({
+    'dateFormat' : "MM dd, yy",
+    'changeYear' : true,
+    'changeMonth' : true,
+  });
+})

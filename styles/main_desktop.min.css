@@ -80,17 +80,17 @@
     #Navbar .navbar-actions li {
       display: inline-block;
       padding: 10px;
-      border: 1px solid #676767;
+      border: 1px solid #126da8;
       text-transform: uppercase;
       margin: 0px 5px;
-      color: #676767;
       cursor: pointer; }
-    #Navbar .navbar-actions li:hover {
-      border: 1px solid #126da8;
-      color: #126da8; }
 
 #Navbar.scrolled {
   padding: 15px 0px 0px; }
+
+.block-blue {
+  background: #126da8;
+  color: white; }
 
 .index-slider {
   height: 600px; }
@@ -154,7 +154,7 @@
   text-align: center;
   border: none; }
 
-.input, .banner-quote-container .custom-drop-down, .banner-quote-container .half-input {
+.input, .banner-quote-container .custom-calendar, .banner-quote-container .custom-drop-down, .banner-quote-container .select2-container--customjo, .banner-quote-container .half-input {
   background: #eee;
   border: none;
   padding: 10px 20px;
@@ -162,6 +162,9 @@
   border: 1px solid #ccc;
   font-size: 15px;
   border-radius: none; }
+
+.select2-results__options li:hover {
+  background: #eee; }
 
 .banner-quote-container {
   padding: 20px;
@@ -177,21 +180,49 @@
     font-weight: bold; }
   .banner-quote-container .form-group {
     margin: 10px 0px;
-    justify-content: space-between; }
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap; }
+  .banner-quote-container .custom-calendar {
+    display: inline-block;
+    width: 49%; }
+  .banner-quote-container .custom-calendar::-webkit-input-placeholder {
+    color: black; }
   .banner-quote-container .custom-drop-down {
     display: inline-block;
-    width: 48%;
+    width: 49%;
     margin-right: 10px; }
+  .banner-quote-container .select2-container--customjo {
+    height: 41px;
+    position: relative;
+    outline: none; }
+    .banner-quote-container .select2-container--customjo span {
+      outline: none;
+      padding: 0 !important; }
+  .banner-quote-container .select2-container--customjo:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+    right: 10px;
+    top: 45%;
+    transform: translateY(-50%) scale(0.9); }
   .banner-quote-container .half-input {
     display: inline-block;
-    width: 48%; }
+    width: 49%; }
   .banner-quote-container .form-title {
     color: #126da8;
     margin: 25px 0 5px;
     font-weight: bold;
     font-size: 17px; }
   .banner-quote-container .checkbox-ul {
-    padding: 10px 0; }
+    padding: 10px 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
     .banner-quote-container .checkbox-ul li {
       display: inline-block;
       padding-right: 10px; }

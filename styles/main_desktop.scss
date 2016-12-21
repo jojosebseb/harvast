@@ -86,21 +86,25 @@ $main-grey: #676767;
     li{
       display: inline-block;
       padding: 10px;
-      border: 1px solid $main-grey;
+      border: 1px solid $main-blue;
       text-transform: uppercase;
       margin: 0px 5px;
-      color: $main-grey;
+      // color: $main-grey;
       cursor: pointer;
     }
     li:hover{
-      border: 1px solid $main-blue;
-      color: $main-blue;
+      // border: 1px solid $main-blue;
+      // color: $main-blue;
     }
   }
 }
 
 #Navbar.scrolled{
   padding: 15px 0px 0px;
+}
+.block-blue{
+  background: $main-blue;
+  color: white;
 }
 //navbar
 
@@ -192,6 +196,13 @@ $main-grey: #676767;
   border: 1px solid #ccc;
   font-size: 15px;
   border-radius: none;
+  // font-family: Calibri;
+}
+.select2-results__options{
+  // background: blue;
+  li:hover{
+    background: #eee;
+  }
 }
 .banner-quote-container{
   padding: 20px;
@@ -209,17 +220,52 @@ $main-grey: #676767;
   .form-group{
     margin: 10px 0px;
     justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .custom-calendar{
+    @extend .input;
+    display: inline-block;
+    width: 49%;
+    // margin-right: 10px;
+    // font-family: Calibri;
+  }
+  .custom-calendar::-webkit-input-placeholder{
+    color: black;
   }
   .custom-drop-down{
     @extend .input;
     display: inline-block;
-    width: 48%;
+    width: 49%;
     margin-right: 10px;
   }
+  .select2-container--customjo{
+    @extend .input;
+    height: 41px;
+    position: relative;
+    outline: none;
+    span{
+      outline: none;
+      padding: 0 !important;
+    }
+  }
+  .select2-container--customjo:after{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+    right: 10px;
+    top: 45%;
+    transform: translateY(-50%) scale(0.9);
+  }
+
   .half-input{
     @extend .input;
     display: inline-block;
-    width: 48%;
+    width: 49%;
   }
   .form-title{
     color: $main-blue;
@@ -228,7 +274,10 @@ $main-grey: #676767;
     font-size: 17px;
   }
   .checkbox-ul{
-    padding: 10px 0;
+    padding: 10px 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     li{
       display: inline-block;
       padding-right: 10px;

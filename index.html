@@ -8,6 +8,8 @@
   <title>Harvast</title>
   <link rel="stylesheet" type="text/css" href="styles/slick.css" />
   <link rel="stylesheet" type="text/css" href="http://css.static.sldclc.com/select2.min.css" />
+  <link rel="stylesheet" type="text/css" href="http://css.static.sldclc.com/jquery-ui-1.12.1.theme.css" />
+  <link rel="stylesheet" type="text/css" href="http://css.static.sldclc.com/jquery-ui-1.12.1.min.css" />
   <link rel="stylesheet" type="text/css" media="screen and (min-width: 1050px)" href="styles/main_desktop.min.css" />
   <link rel="stylesheet" type="text/css" media="screen and (max-width: 1049px)" href="styles/main_mobile.min.css" />
 
@@ -30,7 +32,7 @@
     <div class="navbar-actions">
       <ul>
         <li>Customer Login</li>
-        <li>Request for quote</li>
+        <li class="block-blue">Request for quote</li>
       </ul>
     </div>
     <div class="mobile-handle">
@@ -50,26 +52,27 @@
           <form action="#">
             <div class="form-group">
               <select name="movingFrom" id="" class="custom-drop-down">
-                <option value="">Dummy content</option>
-                <option value="">Dummy content</option>
-                <option value="">Dummy content</option>
+                <option value="">Moving from</option>
+                <option value="">Indonesia</option>
+                <option value="">Malaysia</option>
               </select>
               <input type="text" class="half-input" placeholder="Your Name">
             </div>
             <div class="form-group">
               <select name="movingTo" id="" class="custom-drop-down">
-                <option value="">Dummy content</option>
-                <option value="">Dummy content</option>
-                <option value="">Dummy content</option>
+                <option value="">Moving to</option>
+                <option value="">Indonesia</option>
+                <option value="">Malaysia</option>
               </select>
               <input type="text" class="half-input" placeholder="Phone Number">
             </div>
             <div class="form-group">
-              <select name="movingDate" id="" class="custom-drop-down">
+              <input type="text" class="custom-calendar" placeholder="Moving Date" readonly="">
+              <!-- <select name="movingDate" id="" class="custom-calendar">
                 <option value="">Dummy content</option>
                 <option value="">Dummy content</option>
                 <option value="">Dummy content</option>
-              </select>
+              </select> -->
               <input type="text" class="half-input" placeholder="Email Address">
             </div>
             <div class="form-group">
@@ -306,10 +309,12 @@
 
 
 </body>
-  <script type="text/javascript" src="http://js.static.sldclc.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="http://js.static.sldclc.com/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="script/slick.min.js"></script>
   <script type="text/javascript" src="script/jquery.waypoints.min.js"></script>
   <script type="text/javascript" src="http://js.static.sldclc.com/select2.full.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script type="text/javascript" src="script/jquery.js"></script>
+
 
 </html>
