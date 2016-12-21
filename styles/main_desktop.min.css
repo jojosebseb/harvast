@@ -31,6 +31,9 @@
   /* Firefox 18- */
   color: #ddd; }
 
+.custom-calendar, label {
+  cursor: pointer; }
+
 .container {
   width: 1000px;
   margin: auto;
@@ -199,6 +202,9 @@
     .banner-quote-container .select2-container--customjo span {
       outline: none;
       padding: 0 !important; }
+    .banner-quote-container .select2-container--customjo span.select2-results {
+      max-height: 200px;
+      overflow: auto; }
   .banner-quote-container .select2-container--customjo:after {
     content: "";
     width: 0;
@@ -669,7 +675,3 @@
     padding: 25px;
     opacity: 0;
     border: 1px; } }
-
-.custom-calendar,label {
-	cursor: pointer;
-}
