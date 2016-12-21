@@ -208,6 +208,10 @@ input[type='submit'] {
   .select2-results__options li:hover {
     background: #eee; }
 
+span.select2-results {
+  max-height: 200px;
+  overflow: auto; }
+
 .banner-quote-container {
   padding: 20px;
   background: white;
@@ -252,9 +256,6 @@ input[type='submit'] {
     .banner-quote-container .select2-container--customjo span {
       outline: none;
       padding: 0 !important; }
-    .banner-quote-container .select2-container--customjo span.select2-results {
-      max-height: 200px;
-      overflow: auto; }
   .banner-quote-container .select2-container--customjo:after {
     content: "";
     width: 0;

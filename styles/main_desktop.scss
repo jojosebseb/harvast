@@ -230,6 +230,10 @@ $main-grey: #676767;
     background: #eee;
   }
 }
+span.select2-results {
+  max-height: 200px;
+  overflow: auto;
+}
 .banner-quote-container{
   padding: 20px;
   background: white;
@@ -285,10 +289,7 @@ $main-grey: #676767;
       outline: none;
       padding: 0 !important;
     }
-    span.select2-results {
-      max-height: 200px;
-      overflow: auto;
-    }
+
   }
   .select2-container--customjo:after{
     content: "";
