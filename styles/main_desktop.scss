@@ -225,14 +225,14 @@ $main-grey: #676767;
   /* font-family: Calibri;*/
 }
 .select2-results__options{
-  /* background: blue;*/
+  max-height: 200px;
+  overflow: auto;
   li:hover{
     background: #eee;
   }
 }
 span.select2-results {
-  max-height: 200px;
-  overflow: auto;
+
 }
 .banner-quote-container{
   padding: 20px;

@@ -204,13 +204,10 @@ input[type='submit'] {
   /* font-family: Calibri;*/ }
 
 .select2-results__options {
-  /* background: blue;*/ }
-  .select2-results__options li:hover {
-    background: #eee; }
-
-span.select2-results {
   max-height: 200px;
   overflow: auto; }
+  .select2-results__options li:hover {
+    background: #eee; }
 
 .banner-quote-container {
   padding: 20px;
