@@ -135,7 +135,8 @@ input[type='submit'] {
   .index-slider .slider-items {
     width: 100%;
     background-image: url("../img/global/slider-1-bg.png");
-    height: 600px; }
+    height: 600px;
+	background-position: center; }
   .index-slider .slider-slogan {
     text-transform: uppercase;
     font-size: 24px;
