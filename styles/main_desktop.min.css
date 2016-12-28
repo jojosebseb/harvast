@@ -570,6 +570,7 @@ input[type='submit'] {
     margin-left: -1px;
     margin-top: -1px; }
     .service-flex .service-module img {
+	  max-width: 63%;
       position: absolute;
       top: 40%;
       left: 50%;
