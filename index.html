@@ -22,11 +22,11 @@
     </div>
     <div class="navbar-ul">
       <ul>
-        <a href="#"><li>Home</li></a>
-        <a href="#"><li>Our Services</li></a>
-        <a href="#"><li>About</li></a>
-        <a href="#"><li>Testimonial</li></a>
-        <a href="#"><li>Contact</li></a>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Testimonial</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </div>
     <div class="navbar-actions">
@@ -36,9 +36,9 @@
       </ul>
     </div>
     <div class="mobile-handle">
-      <div class="mobile-lines"></div>
-      <div class="mobile-lines"></div>
-      <div class="mobile-lines"></div>
+      <div class="mobile-lines nav-lines-1"></div>
+      <div class="mobile-lines nav-lines-2"></div>
+      <div class="mobile-lines nav-lines-3"></div>
     </div>
   </div>
 
@@ -56,7 +56,11 @@
                 <option value="">Indonesia</option>
                 <option value="">Malaysia</option>
               </select>
-              <input type="text" class="half-input" placeholder="Your Name">
+              <select name="YourTitle" id="" class="half-input">
+                <option value="">Your Title</option>
+                <option value="">Mr</option>
+                <option value="">Mrs</option>
+              </select>
             </div>
             <div class="form-group">
               <select name="movingTo" id="" class="custom-drop-down">
@@ -64,27 +68,31 @@
                 <option value="">Indonesia</option>
                 <option value="">Malaysia</option>
               </select>
-              <input type="text" class="half-input" placeholder="Phone Number">
+              <input type="text" class="half-input" placeholder="First Name">
             </div>
             <div class="form-group">
               <input type="text" class="custom-calendar" placeholder="Moving Date" readonly="">
+              <input name="actualDate" id="actualDate" type="hidden" class="custom-calendar actualDate" readonly="">
               <!-- <select name="movingDate" id="" class="custom-calendar">
                 <option value="">Dummy content</option>
                 <option value="">Dummy content</option>
                 <option value="">Dummy content</option>
               </select> -->
+              <input type="text" class="half-input" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="half-input" placeholder="Phone Number">
               <input type="text" class="half-input" placeholder="Email Address">
             </div>
             <div class="form-group">
               <div class="form-title">Services interested in</div>
               <ul class="checkbox-ul">
                 <li><label><input type="checkbox" value="" class="checkbox">Moving Services</label></li>
-                <li><label><input type="checkbox" value="" class="checkbox">Relocation</label></li>
                 <li><label><input type="checkbox" value="" class="checkbox">Visa & Immigration</label></li>
               </ul>
-
-
-
+            </div>
+            <div class="form-group">
+              <textarea name="" id="" class="full-input" placeholder="Please input any additional information here"></textarea>
             </div>
             <input type="submit" value="Submit" class="blue-btn">
 
@@ -104,7 +112,7 @@
         </div>
         <div class="slider-items">
           <div class="container">
-            <div class="slider-slogan slogan-2">
+            <div class="slider-slogan">
               Moving Our <br>
               Client <b>Across</b>  <br>
               <b>The Globe</b>
@@ -114,10 +122,10 @@
         </div>
         <div class="slider-items">
           <div class="container">
-            <div class="slider-slogan slogan-3">
-              Moving Our Clients<br>
-              Valuable Belongings <br>
-              Is a miracle that <br>
+            <div class="slider-slogan">
+              Moving Our Clients
+              Valuable Belongings
+              Is a miracle that
               <b>We Do Every Day</b>
             </div>
             <img src="img/global/slider-3-props.png" alt="" class="slider-img slider-img-3">
@@ -305,6 +313,16 @@
 
       </div>
     </div>
+  </div>
+
+  <div id="quoteHandlePar">
+
+    <div class="quote-popup-title">Request for Quote</div>
+    <div class="quote-popup-shadow"></div>
+    <div class="quote-popup-content">
+      blablas
+    </div>
+
   </div>
 
 

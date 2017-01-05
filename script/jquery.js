@@ -58,7 +58,7 @@ $(window).on('scroll', function(){
 });
 
 //nav
-var navLi = $('.navbar-ul > ul > a > li');
+var navLi = $('.navbar-ul > ul > li');
 var navHandle = $('.mobile-handle');
 var navLine1= $('.nav-lines-1');
 var navLine2= $('.nav-lines-2');
@@ -66,12 +66,8 @@ var navLine3= $('.nav-lines-3');
 
 navHandle.on('click', function(){
   console.log("asd");
-  navLine1.toggleClass('active');
-  navLine2.toggleClass('active');
-  navLine3.toggleClass('active');
-
+  navHandle.toggleClass('active');
   $('.navbar-ul').toggleClass('active');
-
   navLi.each(function(i){
     $(this).toggleClass('active');
     $(this).css({
@@ -91,5 +87,63 @@ $(function(){
     'dateFormat' : "MM dd, yy",
     'changeYear' : true,
     'changeMonth' : true,
+    'altField' : "#actualDate",
+    'altFormat' : "yy-mm-dd",
   });
+})
+
+
+//popup-request
+
+var quoteHandle = $('#quoteHandlePar');
+var popup = $('#popup');
+
+quoteHandle.on('click', function(){
+  quoteHandle.addClass('active');
+})
+
+//our-service
+
+var serviceMod = $('.service-module');
+var serviceDesc = $('.service-desc-container');
+var serviceFlex = $('.service-flex');
+var qTotal = $('.service-flex > .service-module').length;
+
+serviceMod.on('click', function(){
+  var mBottom = 0;
+  serviceMod.removeClass('active');
+  $(this).addClass('active');
+  var elIndex = $('.service-module').index(this);
+  mBottom = $(this).find('.service-desc-container').height();
+  var modWidth = serviceMod.width() +2;
+
+
+  // console.log('qTotal = ' + qTotal);
+
+  serviceMod.css({
+    'margin-bottom': 0,
+    // opacity: '0.3',
+  })
+  $(this).css({
+    'margin-bottom': mBottom+61+'px',
+    opacity: 1
+  })
+
+  var qLimit = serviceFlex.width() / modWidth;
+  console.log("elIndex = "+elIndex);
+  // console.log("elIndex = "+elIndex);
+
+  if (elIndex < qLimit) {
+    serviceDesc.css({
+      left : '-'+ ((modWidth * elIndex)-elIndex+1) + 'px'
+    })
+  }
+  else {
+    elIndex = elIndex - qLimit;
+    console.log("elIndex after = "+elIndex);
+    serviceDesc.css({
+      left : '-'+ ((modWidth * elIndex)-elIndex+1) + 'px'
+    })
+
+  }
 })

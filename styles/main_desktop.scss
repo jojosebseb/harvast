@@ -8,6 +8,9 @@
   font-family: Alpinist;
   list-style: none;
 }
+.hidden{
+  display: none;
+}
 @font-face {
   font-family: Alpinist;
   src: url('../fonts/Alpinist-Regular_0.ttf');
@@ -151,13 +154,14 @@ $main-grey: #676767;
     text-transform: uppercase;
     font-size: 24px;
     position: absolute;
-    top: 35%;
+    top: 43%;
     left: 10%;
     color: white;
     width: 250px;
     line-height: 40px;
     letter-spacing: 1px;
     font-family: Gothic;
+    transform: translateY(-50%);
     b{
       font-family: Gothic
     }
@@ -243,6 +247,14 @@ span.select2-results {
   right: 0;
   top: 135px;
   width: 450px;
+  .full-input{
+    @extend .input;
+    width: 100%;
+    resize: none;
+  }
+  .full-input:focus{
+    background: #eee;
+  }
   .quote-title{
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -267,13 +279,13 @@ span.select2-results {
     /* font-family: Calibri;*/
   }
   .custom-calendar::-webkit-input-placeholder{
-    color: black;
+    color: #888;
   }
   .custom-calendar::-moz-input-placeholder{
-    color: black;
+    color: #888;
   }
   .custom-calendar::-ms-input-placeholder{
-    color: black;
+    color: #888;
   }
   .custom-drop-down{
     @extend .input;
@@ -283,9 +295,10 @@ span.select2-results {
   }
   .select2-container--customjo{
     @extend .input;
-    height: 41px;
+    height: 40px;
     position: relative;
     outline: none;
+    // color: #888;
     span{
       outline: none;
       padding: 0 !important;
@@ -314,22 +327,25 @@ span.select2-results {
 
   .form-title{
     color: $main-blue;
-    margin: 25px 0 5px;
+    // margin: 15px 0 5px;
     font-weight: bold;
     font-size: 17px;
+    margin-top: 10px;
   }
   .checkbox-ul{
-    padding: 10px 5px;
-    width: 100%;
+    padding: 3px 5px;
+    width: 60%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+            margin-top: 10px;
     li{
       display: inline-block;
-      padding-right: 10px;
+      // padding-right: 10px;
+      font-size: 13px;
     }
   }
   .checkbox{
@@ -341,7 +357,7 @@ span.select2-results {
   .blue-btn{
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 15px 30px;
+    padding: 10px 40px;
   }
 }
 .paragraph-title{
@@ -386,6 +402,7 @@ span.select2-results {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    justify-content: center;
   }
   .solution-module{
     position: relative;
@@ -460,6 +477,10 @@ span.select2-results {
   border-radius: 50%;
   background-image: url('../img/dummy-avatar.jpg');
 }
+.testimonial-href{
+  color: $main-blue;
+  margin-top: 10px;
+}
 #Testimonials{
   padding: 50px 0;
   background: #f5f6f8;
@@ -468,17 +489,28 @@ span.select2-results {
   }
   .testimonials-container{
   }
+  .testimonial-content{
+    color: #444;
+    font-size: 14px;
+    margin-top: 20px;
+  }
   .testimonials-module{
     background: white;
     width: 23%;
     text-align: center;
     padding: 30px;
     margin: 10px;
+    min-height: 420px;
+    position: relative;
   }
 
   .testimonial-username{
     font-weight: bold;
     margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    left: 50%;
   }
   .prev-btn{
     border-top: 2px solid $main-grey;
@@ -599,7 +631,7 @@ span.select2-results {
   }
   .blue-quote{
     color: $main-blue;
-    width: 80%;
+    width: 55%;
     font-size: 24px;
     margin: 30px auto 30px;
     line-height: 35px;
@@ -608,7 +640,7 @@ span.select2-results {
   .paragraph{
     color: #888;
     line-height: 25px;
-    width: 85%;
+    width: 90%;
     margin: auto;
   }
   .paragraph.blue{
@@ -658,6 +690,8 @@ span.select2-results {
     border: 1px solid rgba(222, 222, 222, 1);
     margin-left: -1px;
     margin-top: -1px;
+    // transition: all .3s ease;
+    cursor: pointer;
     img{
       max-width: 63%;
       position: absolute;
@@ -665,6 +699,46 @@ span.select2-results {
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
+              transition: all .3s ease;
+    }
+    .service-desc-container{
+      display: none;
+      opacity: 0;
+      position: relative;
+      // height: 0px;
+      background: #f8f8f8;
+      width: 503.5%;
+      bottom: -199px;
+      // left: -1px;
+      border-left: 1px solid rgba(222, 222, 222, 1);
+      border-right: 1px solid rgba(222, 222, 222, 1);
+      border-bottom: 1px solid rgba(222, 222, 222, 1);
+      transition: height .3s ease;
+      padding: 30px 0;
+    }
+    .service-desc{
+      opacity: 0;
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      margin: auto;
+      width: 80%;
+      color: #848484;
+      text-align: left;
+      p{
+        margin: 8px 0;
+      }
+      b{
+        color: #333;
+      }
+    }
+  }
+  .service-module:hover{
+    // border: 1px solid $main-blue;
+    img{
+      // transform: translate(-50%, -50%) scale(1.1);
+
     }
   }
   .service-caption{
@@ -676,6 +750,37 @@ span.select2-results {
             transform: translate(-50%, -50%);
     color: $main-blue;
     font-size: 13px;
+  }
+  .service-module.active{
+    margin-bottom: 300px;
+    border-bottom: 1px solid #888;
+    .service-desc-container{
+      display: block;
+      // height: 300px;
+      opacity: 1;
+      overflow: auto;
+    }
+    .service-desc{
+      opacity: 1;
+      line-height: 20px;
+      font-size: 15px;
+      overflow: auto;
+      // padding: 50px;
+    }
+  }
+
+  .service-module.active:after{
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: white;
+    position: absolute;
+    border-left: 1px solid #888;
+    border-bottom: 1px solid #888;
+    bottom: -11px;
+    left: 50%;
+    transform: translateX(-50%) rotateZ(-45deg);
+    z-index: 5;
   }
 }
 .service-flex-2{
@@ -913,4 +1018,8 @@ span.select2-results {
     border: 1px;
     /* background: $main-blue*/
   }
+}
+
+#quoteHandle{
+  display: none;
 }
