@@ -139,7 +139,7 @@ input[type='submit'] {
     width: 100%;
     background-image: url("../img/global/slider-1-bg.png");
     height: 600px;
-	background-position: center; }
+    background-position: center; }
   .index-slider .slider-slogan {
     text-transform: uppercase;
     font-size: 24px;
@@ -244,6 +244,10 @@ input[type='submit'] {
   .banner-quote-container .custom-calendar {
     display: inline-block;
     width: 49%;
+    background-image: url(../img/global/calendar.png);
+    background-size: 17px;
+    background-repeat: no-repeat;
+    background-position: 97% center;
     /* margin-right: 10px;*/
     /* font-family: Calibri;*/ }
   .banner-quote-container .custom-calendar::-webkit-input-placeholder {
@@ -596,7 +600,7 @@ input[type='submit'] {
     margin-top: -1px;
     cursor: pointer; }
     .service-flex .service-module img {
-	  max-width: 63%;
+      max-width: 63%;
       position: absolute;
       top: 40%;
       left: 50%;
@@ -871,4 +875,7 @@ input[type='submit'] {
     /* background: $main-blue*/ } }
 
 #quoteHandle {
+  display: none; }
+
+#quoteHandleParent {
   display: none; }

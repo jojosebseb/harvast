@@ -275,6 +275,10 @@ span.select2-results {
     @extend .input;
     display: inline-block;
     width: 49%;
+    background-image: url(../img/global/calendar.png);
+    background-size: 17px;
+    background-repeat: no-repeat;
+    background-position: 97% center;
     /* margin-right: 10px;*/
     /* font-family: Calibri;*/
   }
@@ -1021,5 +1025,9 @@ span.select2-results {
 }
 
 #quoteHandle{
+  display: none;
+}
+
+#quoteHandleParent{
   display: none;
 }

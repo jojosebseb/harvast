@@ -7,6 +7,54 @@
   font-family: Alpinist;
   list-style: none; }
 
+.half-input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #888; }
+
+.half-input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #888; }
+
+.half-input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #888; }
+
+.half-input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #888; }
+
+.full-input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #888; }
+
+.full-input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #888; }
+
+.full-input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #888; }
+
+.full-input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #888; }
+
+.custom-calendar::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #888; }
+
+.custom-calendar::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #888; }
+
+.custom-calendar:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #888; }
+
+.custom-calendar:-moz-placeholder {
+  /* Firefox 18- */
+  color: #888; }
+
 @font-face {
   font-family: Alpinist;
   src: url("../fonts/Alpinist-Regular_0.ttf"); }
@@ -196,7 +244,7 @@
   text-align: center;
   border: none; }
 
-.input, .banner-quote-container .custom-drop-down, .banner-quote-container .half-input {
+.input, .banner-quote-container .custom-drop-down, .banner-quote-container .half-input, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
   background: #eee;
   border: none;
   padding: 10px 20px;
@@ -701,57 +749,93 @@
   font-family: Calibri;
   font-size: 13px; }
 
-#quoteHandlePar {
-  background: #126da8;
-  color: white;
+#quoteHandleParent {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 10px 15px;
-  border-top-left-radius: 10px;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 12px;
-  transition: all .3s ease;
-  height: auto; }
-  #quoteHandlePar .quote-popup-title {
+  top: 100vh;
+  z-index: 950;
+  background: black; }
+  #quoteHandleParent .quote-handle-title {
+    position: absolute;
+    height: 30px;
+    right: 0;
+    top: -30px;
+    background: #126da8;
+    border-top-left-radius: 5px;
+    padding: 5px 15px;
     color: white;
-    position: relative; }
-  #quoteHandlePar .quote-popup-content {
-    display: none; }
+    border: 1px solid rgba(255, 255, 255, 0.2); }
 
-#quoteHandlePar.active {
-  background: none;
+#quoteHandleParent.active {
+  position: fixed;
   top: 0;
   left: 0;
+  background: rgba(0, 0, 0, 0.8);
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   z-index: 950;
-  border-radius: 0; }
-  #quoteHandlePar.active .quote-popup-shadow {
-    background: rgba(0, 0, 0, 0.75);
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
+  padding: 15px 5px; }
+  #quoteHandleParent.active .full-input {
+    background: #eee;
     width: 100%;
-    z-index: 950;
-    border-radius: 0; }
-  #quoteHandlePar.active .quote-popup-title {
+    padding: 10px 20px;
+    outline: none;
+    resize: vertical;
+    border: 1px solid #ccc; }
+  #quoteHandleParent.active .quote-handle-title {
     background: white;
-    z-index: 951;
-    display: block;
-    position: relative;
-    color: black;
-    padding: 10px 15px;
+    margin: 40px 0 0;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     text-align: center;
-    font-size: 16px; }
-  #quoteHandlePar.active .quote-popup-content {
-    display: block;
-    position: absolute;
-    z-index: 951;
-    bottom: 0;
-    left: 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid #eee;
+    position: static;
+    color: black;
+    height: auto; }
+  #quoteHandleParent.active .quote-container {
     background: white;
+    padding: 0px 20px 30px;
+    margin: 0px 0;
+    overflow: auto;
+    position: relative; }
+    #quoteHandleParent.active .quote-container form {
+      position: relative; }
+  #quoteHandleParent.active .input, #quoteHandleParent.active .banner-quote-container .custom-drop-down, .banner-quote-container #quoteHandleParent.active .custom-drop-down, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
+    width: 49% !important;
+    padding: 8px 0px;
+    height: 40px;
+    margin: 8px 0; }
+  #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
+    padding-left: 10px; }
+  #quoteHandleParent.active .custom-calendar {
+    background-image: url(../img/global/calendar.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 95% center; }
+  #quoteHandleParent.active .form-title {
+    color: #126da8;
+    margin: 5px 0 5px;
+    font-weight: bold;
+    font-size: 17px; }
+  #quoteHandleParent.active .checkbox-ul {
+    padding: 0px 0; }
+    #quoteHandleParent.active .checkbox-ul li {
+      display: inline-block;
+      padding-right: 10px;
+      font-size: 14px; }
+  #quoteHandleParent.active .blue-btn {
+    background: #126da8;
     width: 100%;
-    min-height: 50vh; }
+    height: 30px; }
+  #quoteHandleParent.active .quote-minimize {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    right: 30px;
+    top: 10.5vh;
+    color: white;
+    z-index: 5;
+    transform: rotateZ(-45deg); }

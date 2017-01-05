@@ -116,34 +116,41 @@ serviceMod.on('click', function(){
   var elIndex = $('.service-module').index(this);
   mBottom = $(this).find('.service-desc-container').height();
   var modWidth = serviceMod.width() +2;
-
-
-  // console.log('qTotal = ' + qTotal);
-
   serviceMod.css({
     'margin-bottom': 0,
-    // opacity: '0.3',
   })
   $(this).css({
     'margin-bottom': mBottom+61+'px',
     opacity: 1
   })
-
   var qLimit = serviceFlex.width() / modWidth;
-  console.log("elIndex = "+elIndex);
-  // console.log("elIndex = "+elIndex);
-
   if (elIndex < qLimit) {
     serviceDesc.css({
-      left : '-'+ ((modWidth * elIndex)-elIndex+1) + 'px'
+      left : '-'+((modWidth * elIndex)-elIndex+1) + 'px'
     })
   }
   else {
-    elIndex = elIndex - qLimit;
-    console.log("elIndex after = "+elIndex);
+    var varF = (Math.floor(elIndex / qLimit)*qLimit);
+    console.log('varF = ' + varF);
+    elIndex = elIndex - (Math.floor(elIndex / qLimit)*qLimit);
     serviceDesc.css({
-      left : '-'+ ((modWidth * elIndex)-elIndex+1) + 'px'
+      left : '-'+((modWidth * elIndex)-elIndex+1) + 'px'
     })
 
   }
+})
+
+
+//quoteHandle
+
+var quoteHandlePar = $('#quoteHandleParent');
+var quoteHandle = $('.quote-handle-title');
+var quoteMin = $('.quote-minimize');
+
+quoteHandle.on('click', function(){
+  quoteHandlePar.addClass('active');
+})
+
+quoteMin.on('click', function(){
+  quoteHandlePar.removeClass('active');
 })
