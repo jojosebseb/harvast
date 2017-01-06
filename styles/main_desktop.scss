@@ -43,6 +43,7 @@
 .half-input:-moz-placeholder { /* Firefox 18- */
   color: #888;
 }
+
 .custom-calendar,label {
 	cursor: pointer;
 }
@@ -247,6 +248,18 @@ span.select2-results {
   right: 0;
   top: 135px;
   width: 450px;
+  .full-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #888;
+  }
+  .full-input::-moz-placeholder { /* Firefox 19+ */
+    color: #888;
+  }
+  .full-input:-ms-input-placeholder { /* IE 10+ */
+    color: #888;
+  }
+  .full-input:-moz-placeholder { /* Firefox 18- */
+    color: #888;
+  }
   .full-input{
     @extend .input;
     width: 100%;

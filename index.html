@@ -318,13 +318,13 @@
 
   <div id="quoteHandleParent">
     <!-- <div class="quote-shadow"></div> -->
-    <div class="quote-handle-title">
-      Request for Quote
-    </div>
-    <div class="quote-minimize">
-<!-- asdasdasd -->
-    </div>
-    <div class="quote-container">
+
+    <div class="quote-wrapper">
+      <div class="quote-handle-title">
+        Request for Quote
+      </div>
+      <div class="quote-minimize"></div>
+      <div class="quote-container">
       <form action="">
         <select name="movingTo" id="" class="custom-drop-down">
           <option value="">Moving from</option>
@@ -337,14 +337,15 @@
           <option value="">Malaysia</option>
         </select>
 
+
+        <input type="text" class="custom-calendar" placeholder="Moving Date" readonly="">
+        <input name="actualDate" id="actualDate" type="hidden" class="custom-calendar actualDate" readonly="">
+
         <select name="movingTo" id="" class="half-input">
           <option value="">Title</option>
           <option value="">Mr</option>
           <option value="">Mrs</option>
         </select>
-        <input type="text" class="custom-calendar" placeholder="Moving Date" readonly="">
-        <input name="actualDate" id="actualDate" type="hidden" class="custom-calendar actualDate" readonly="">
-
         <input type="text" class="full-input" placeholder="First Name">
         <input type="text" class="full-input" placeholder="Last Name">
         <input type="text" class="full-input" placeholder="Phone Number">
@@ -361,6 +362,8 @@
         <input type="submit" value="Submit" class="blue-btn">
       </form>
     </div>
+    </div>
+
   </div>
 
 

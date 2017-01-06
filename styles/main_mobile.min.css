@@ -244,7 +244,7 @@
   text-align: center;
   border: none; }
 
-.input, .banner-quote-container .custom-drop-down, .banner-quote-container .half-input, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
+.input, .banner-quote-container .custom-drop-down, .banner-quote-container .half-input, #quoteHandleParent .select2-container--customjo, #quoteHandleParent .half-input, #quoteHandleParent .custom-calendar, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
   background: #eee;
   border: none;
   padding: 10px 20px;
@@ -753,17 +753,78 @@
   position: fixed;
   top: 100vh;
   z-index: 950;
-  background: black; }
+  background: black;
+  transition: all .3s ease; }
+  #quoteHandleParent .quote-wrapper {
+    position: fixed; }
   #quoteHandleParent .quote-handle-title {
     position: absolute;
     height: 30px;
-    right: 0;
+    right: 5px;
     top: -30px;
     background: #126da8;
     border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     padding: 5px 15px;
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2); }
+  #quoteHandleParent .full-input {
+    background: #eee;
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    resize: vertical;
+    border: 1px solid #ccc; }
+  #quoteHandleParent .quote-container {
+    background: white;
+    padding: 0px 20px 30px;
+    margin: 0px 0;
+    overflow: auto;
+    position: relative; }
+    #quoteHandleParent .quote-container form {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; }
+  #quoteHandleParent .input, #quoteHandleParent .banner-quote-container .custom-drop-down, .banner-quote-container #quoteHandleParent .custom-drop-down, #quoteHandleParent .select2-container--customjo, #quoteHandleParent .half-input, #quoteHandleParent .custom-calendar, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
+    width: 49% !important;
+    padding: 8px 0px;
+    height: 40px;
+    margin: 8px 0; }
+  #quoteHandleParent .half-input, #quoteHandleParent .custom-calendar {
+    width: 100% !important;
+    padding-left: 10px; }
+  #quoteHandleParent .custom-calendar {
+    background-image: url(../img/global/calendar.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 95% center; }
+  #quoteHandleParent .form-title {
+    color: #126da8;
+    margin: 5px 0 5px;
+    font-weight: bold;
+    font-size: 17px; }
+  #quoteHandleParent .checkbox-ul {
+    padding: 0px 0; }
+    #quoteHandleParent .checkbox-ul li {
+      display: inline-block;
+      padding-right: 10px;
+      font-size: 14px; }
+  #quoteHandleParent .blue-btn {
+    background: #126da8;
+    width: 100%;
+    height: 30px; }
+  #quoteHandleParent .quote-minimize {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    right: 30px;
+    top: 10.5vh;
+    color: white;
+    z-index: 5;
+    transform: rotateZ(-45deg); }
 
 #quoteHandleParent.active {
   position: fixed;
@@ -774,24 +835,27 @@
   width: 100vw;
   z-index: 950;
   padding: 15px 5px; }
+  #quoteHandleParent.active .quote-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 99%; }
   #quoteHandleParent.active .full-input {
     background: #eee;
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 10px;
     outline: none;
     resize: vertical;
     border: 1px solid #ccc; }
   #quoteHandleParent.active .quote-handle-title {
-    background: white;
-    margin: 40px 0 0;
-    padding: 15px;
+    padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
     text-transform: uppercase;
     border-bottom: 1px solid #eee;
     position: static;
-    color: black;
     height: auto; }
   #quoteHandleParent.active .quote-container {
     background: white;
@@ -800,13 +864,17 @@
     overflow: auto;
     position: relative; }
     #quoteHandleParent.active .quote-container form {
-      position: relative; }
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; }
   #quoteHandleParent.active .input, #quoteHandleParent.active .banner-quote-container .custom-drop-down, .banner-quote-container #quoteHandleParent.active .custom-drop-down, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
     width: 49% !important;
     padding: 8px 0px;
     height: 40px;
-    margin: 8px 0; }
+    margin: 5px 0; }
   #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
+    width: 100% !important;
     padding-left: 10px; }
   #quoteHandleParent.active .custom-calendar {
     background-image: url(../img/global/calendar.png);
@@ -827,15 +895,17 @@
   #quoteHandleParent.active .blue-btn {
     background: #126da8;
     width: 100%;
-    height: 30px; }
+    height: 30px;
+    margin-top: 10px; }
   #quoteHandleParent.active .quote-minimize {
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
     height: 13px;
     width: 13px;
     position: absolute;
     right: 30px;
-    top: 10.5vh;
+    top: 1.5%;
     color: white;
     z-index: 5;
-    transform: rotateZ(-45deg); }
+    transform: rotateZ(-45deg);
+    background: #126da8; }
