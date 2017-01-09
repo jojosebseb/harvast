@@ -244,7 +244,7 @@
   text-align: center;
   border: none; }
 
-.input, .banner-quote-container .custom-drop-down, .banner-quote-container .half-input, #quoteHandleParent .select2-container--customjo, #quoteHandleParent .half-input, #quoteHandleParent .custom-calendar, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
+.input, .banner-quote-container .custom-drop-down, .banner-quote-container .half-input, #quoteHandleParent .select2-container--customjo, #quoteHandleParent .half-input, #quoteHandleParent .custom-calendar, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .w20-input, #quoteHandleParent.active .w40-input {
   background: #eee;
   border: none;
   padding: 10px 20px;
@@ -786,7 +786,7 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap; }
-  #quoteHandleParent .input, #quoteHandleParent .banner-quote-container .custom-drop-down, .banner-quote-container #quoteHandleParent .custom-drop-down, #quoteHandleParent .select2-container--customjo, #quoteHandleParent .half-input, #quoteHandleParent .custom-calendar, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
+  #quoteHandleParent .input, #quoteHandleParent .banner-quote-container .custom-drop-down, .banner-quote-container #quoteHandleParent .custom-drop-down, #quoteHandleParent .select2-container--customjo, #quoteHandleParent .half-input, #quoteHandleParent .custom-calendar, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .w20-input, #quoteHandleParent.active .w40-input {
     width: 49% !important;
     padding: 8px 0px;
     height: 40px;
@@ -865,22 +865,25 @@
     position: relative; }
     #quoteHandleParent.active .quote-container form {
       position: relative;
+      overflow: auto;
+      max-height: 90vh;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap; }
-  #quoteHandleParent.active .input, #quoteHandleParent.active .banner-quote-container .custom-drop-down, .banner-quote-container #quoteHandleParent.active .custom-drop-down, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
-    width: 49% !important;
+  #quoteHandleParent.active .input, #quoteHandleParent.active .banner-quote-container .custom-drop-down, .banner-quote-container #quoteHandleParent.active .custom-drop-down, #quoteHandleParent.active .custom-calendar, #quoteHandleParent.active .select2-container--customjo, #quoteHandleParent.active .half-input, #quoteHandleParent.active .w20-input, #quoteHandleParent.active .w40-input {
+    width: 49%;
     padding: 8px 0px;
     height: 40px;
     margin: 5px 0; }
-  #quoteHandleParent.active .half-input, #quoteHandleParent.active .custom-calendar {
-    width: 100% !important;
+  #quoteHandleParent.active .half-input {
     padding-left: 10px; }
   #quoteHandleParent.active .custom-calendar {
     background-image: url(../img/global/calendar.png);
     background-size: 20px 20px;
     background-repeat: no-repeat;
-    background-position: 95% center; }
+    background-position: 95% center;
+    width: 100% !important;
+    padding-left: 10px; }
   #quoteHandleParent.active .form-title {
     color: #126da8;
     margin: 5px 0 5px;
@@ -909,3 +912,9 @@
     z-index: 5;
     transform: rotateZ(-45deg);
     background: #126da8; }
+  #quoteHandleParent.active .w20-input {
+    width: 19% !important;
+    padding-left: 5px; }
+  #quoteHandleParent.active .w40-input {
+    width: 38% !important;
+    padding-left: 10px; }

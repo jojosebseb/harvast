@@ -1007,6 +1007,7 @@ $main-grey: #676767;
   width: 100vw;
   z-index: 950;
   padding: 15px 5px;
+
   .quote-wrapper{
     position: absolute;
     bottom: 0;
@@ -1045,13 +1046,15 @@ $main-grey: #676767;
     position: relative;
     form{
       position: relative;
+      overflow: auto;
+      max-height: 90vh;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
     }
   }
   .input{
-    width: 49% !important;
+    width: 49%;
     padding: 8px 0px;
     height: 40px;
     margin: 5px 0;
@@ -1059,9 +1062,9 @@ $main-grey: #676767;
   .select2-container--customjo{
     @extend .input;
   }
-  .half-input, .custom-calendar{
+  .half-input{
     @extend .input;
-    width: 100% !important;
+    // width: 100% !important;
     padding-left: 10px;
   }
   .custom-calendar{
@@ -1069,6 +1072,8 @@ $main-grey: #676767;
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: 95% center;
+    width: 100% !important;
+    padding-left: 10px;
   }
   .form-title{
     color: $main-blue;
@@ -1105,5 +1110,17 @@ $main-grey: #676767;
     z-index: 5;
     transform:rotateZ(-45deg);
     background: $main-blue;
+  }
+  .w20-input{
+    @extend .input;
+    width: 19% !important;
+    padding-left: 5px;
+
+  }
+  .w40-input{
+    @extend .input;
+    width: 38% !important;
+    padding-left: 10px;
+
   }
 }
