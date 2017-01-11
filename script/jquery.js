@@ -106,38 +106,72 @@ quoteHandle.on('click', function(){
 
 var serviceMod = $('.service-module');
 var serviceDesc = $('.service-desc-container');
+
 var serviceFlex = $('.service-flex');
 var qTotal = $('.service-flex > .service-module').length;
 
-serviceMod.on('click', function(){
-  var mBottom = 0;
-  serviceMod.removeClass('active');
-  $(this).addClass('active');
-  var elIndex = $('.service-module').index(this);
-  mBottom = $(this).find('.service-desc-container').height();
-  var modWidth = serviceMod.width() +2;
-  serviceMod.css({
-    'margin-bottom': 0,
-  })
-  $(this).css({
-    'margin-bottom': mBottom+61+'px',
-    opacity: 1
-  })
-  var qLimit = serviceFlex.width() / modWidth;
-  if (elIndex < qLimit) {
-    serviceDesc.css({
-      left : '-'+((modWidth * elIndex)-elIndex+1) + 'px'
-    })
-  }
-  else {
-    var varF = (Math.floor(elIndex / qLimit)*qLimit);
-    console.log('varF = ' + varF);
-    elIndex = elIndex - (Math.floor(elIndex / qLimit)*qLimit);
-    serviceDesc.css({
-      left : '-'+((modWidth * elIndex)-elIndex+1) + 'px'
-    })
+serviceFlex.on('click', '.service-module', function(){
 
+  var curId = $(this).parent().attr('id');
+
+
+
+  if (!$(this).hasClass('active')) {
+    serviceMod.removeClass('active');
+    $(this).addClass('active');
+    var mBottom = $(this).find('.service-desc-container').height();
+    serviceMod.css({
+      'margin-bottom': 0,
+    })
+    $(this).css({
+      'margin-bottom': mBottom+61+'px',
+      opacity: 1
+    })
+  }else {
+    serviceMod.removeClass('active');
+    serviceMod.css({
+      'margin-bottom': 0,
+    })
   }
+
+
+  // var elIndex = $('.service-module').index(this);
+  var elIndex = $(this).parent().find('.service-module').index(this);
+
+  console.log(elIndex);
+
+  var serviceInner = $(this).find('.service-desc');
+  var modWidth = serviceMod.width()+2;
+
+
+  var qLimit = serviceFlex.width() / modWidth;
+
+
+  if ($.trim(serviceInner.html()) != "") {
+    console.log('not empty');
+    if (elIndex < qLimit) {
+      serviceDesc.css({
+        left : '-'+((modWidth * elIndex)-elIndex+1) + 'px'
+      })
+    }
+    else {
+      var varF = (Math.floor(elIndex / qLimit)*qLimit);
+      elIndex = elIndex - (Math.floor(elIndex / qLimit)*qLimit);
+      serviceDesc.css({
+        left : '-'+((modWidth * elIndex)-elIndex+1) + 'px'
+      })
+    }
+  }else{
+    console.log('empty');
+    $(this).removeClass('active');
+    serviceMod.css({
+      'margin-bottom': 0,
+    })
+  }
+
+
+
+
 })
 
 
@@ -148,9 +182,11 @@ var quoteHandle = $('.quote-handle-title');
 var quoteMin = $('.quote-minimize');
 
 quoteHandle.on('click', function(){
-  quoteHandlePar.addClass('active');
-})
+  if (!quoteHandlePar.hasClass('active')) {
+    quoteHandlePar.addClass('active');
+  }
+  else {
+    quoteHandlePar.removeClass('active');
+  }
 
-quoteMin.on('click', function(){
-  quoteHandlePar.removeClass('active');
 })
